@@ -1,10 +1,7 @@
 <?php
 
+use App\Http\Controllers\{Api\V1\AuthController, LogicalTestController};
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{
-    LogicalTestController,
-    AuthController
-};
 
 /*
 |--------------------------------------------------------------------------
@@ -27,11 +24,10 @@ Route::get('/logical-test', [LogicalTestController::class, 'index']);
 // all of development test route
 
 // AUTH
-Route::group(['middleware' => 'api'], function ($router) {
+Route::group(['middleware' => 'api', 'prefix' => 'api/v1'], function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::post('/refresh', [AuthController::class, 'refresh']);
-    Route::post('/profile', [AuthController::class, 'profile']);
+    Route::post('/who-am-i', [AuthController::class, 'profile']);
 });
 
