@@ -41,6 +41,11 @@ L5_SWAGGER_GENERATE_ALWAYS=true
 To get a look for API Documentation on this application you can open url :
 > http://127.0.0.1:8000/api/documentation
 
+## LexicoGraphically
+
+If you want to see my result of lexicographically based on KodeGiri Coding Test (Logical) you can access this route :
+> http://127.0.0.1:8000/logical-test
+
 ### Note :
 - you must create your own account using url above
 - after login success, you get secret key token, <br> then you must add it into "Authorize" button right above API Documentation URL
