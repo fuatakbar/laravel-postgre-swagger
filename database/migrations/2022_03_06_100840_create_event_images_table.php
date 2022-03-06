@@ -22,7 +22,8 @@ class CreateEventImagesTable extends Migration
                 ->references('id')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
